@@ -21,7 +21,7 @@
 
 请确保安装 Python 3.8+，并安装以下依赖：
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -38,7 +38,7 @@ pip install -r requirements.txt
     前往 [Fashion-MNIST GitHub](https://github.com/zalandoresearch/fashion-mnist)，clone 仓库或下载 `data/fashion` 下的 4 个 `.gz` 文件。
 
 2.  **存放位置**：
-    建议将数据放在项目根目录下，例如：`./fashion-mnist/data/fashion/`。
+    建议将数据放在项目根目录下，例如：`./data/fashion/`。
     确保该目录下包含：
     *   `train-images-idx3-ubyte.gz`
     *   `train-labels-idx1-ubyte.gz`
@@ -50,26 +50,26 @@ pip install -r requirements.txt
 
     ```python
     # main.py
-    LOCAL_DATA_PATH = './fashion-mnist/data/fashion'  # 修改为你实际的绝对或相对路径
+    LOCAL_DATA_PATH = './data/fashion'  # 修改为你实际的绝对或相对路径
     ```
 
 ## 🚀 运行方法
 
 配置好数据路径后，运行：
 
-```bash
+```
 python main.py
 ```
 
-## 📈 实验结果 (预期)
+## 📈 实验结果 
 
 程序将依次运行 SVM 和 CNN。
 
 | 方法 | 核心/结构 | 准确率 (Accuracy) | 说明 |
 | :--- | :--- | :--- | :--- |
-| **SVM** | Linear Kernel | ~82% | 线性核，速度较快 |
-| **SVM** | RBF Kernel | ~84% | 高斯核，非线性能力更强 |
-| **CNN** | LeNet-5 Like | **~88% - 90%** | 2层卷积+全连接，效果最佳 |
+| **SVM** | Linear Kernel | 82.30% | 线性核，速度较快 |
+| **SVM** | RBF Kernel | 85.90% | 高斯核，非线性能力更强 |
+| **CNN** | LeNet-5 Like | **86.50%** | 2层卷积+全连接，效果最佳 |
 
 *注：为了运行速度，SVM 部分默认仅使用了 5000 条训练数据。如需全量训练，请在 `main.py` 中移除 `limit` 参数。*
 
@@ -82,6 +82,3 @@ python main.py
 2.  **CNN 模型**：
     *   自定义 `SimpleCNN` 类，包含卷积层、ReLU 激活函数、最大池化层和全连接层。
     *   手动实现了完整的 Training Loop（前向传播、Loss计算、反向传播、参数更新）。
-
-## 🤝 贡献
-欢迎提交 Issue 或 Pull Request 改进代码。
