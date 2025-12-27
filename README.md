@@ -2,8 +2,10 @@
 
 这是一个基于 Python 的图像分类项目，旨在通过 **Support Vector Machine (SVM)** 和 **Convolutional Neural Network (CNN)** 两种方法，对 [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) 数据集进行分类并对比性能。
 
-*仅作为licy ucas2025秋季学期计算机视觉课程作业*
+*仅作为licy ucas2025秋季学期计算机视觉课程作业*  
+
 **START** git clone https://github.com/soleillevant0125/ucas2025cvhomework_licy.git
+
 ##  项目结构
 
 ```text
