@@ -11,7 +11,7 @@ def train_eval_svm(X_train, y_train, X_test, y_test):
         start_time = time.time()
         
         # 定义模型
-        clf = svm.SVC(kernel=kernel_type, C=1.0, random_state=42)
+        clf = svm.SVC(kernel=kernel_type, C=1.0, random_state=42, verbose=True)
         
         # 训练
         clf.fit(X_train, y_train)

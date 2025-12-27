@@ -2,9 +2,9 @@
 
 这是一个基于 Python 的图像分类项目，旨在通过 **Support Vector Machine (SVM)** 和 **Convolutional Neural Network (CNN)** 两种方法，对 [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) 数据集进行分类并对比性能。
 
-本项目实现了从原始 `.gz` 二进制文件读取数据，不依赖 `torchvision` 的自动下载功能，适合离线环境或学习数据解析原理。
-
-## 📂 项目结构
+*仅作为licy ucas2025秋季学期计算机视觉课程作业*
+**START** git clone https://github.com/soleillevant0125/ucas2025cvhomework_licy.git
+##  项目结构
 
 ```text
 .
@@ -17,7 +17,7 @@
 └── README.md         # 项目说明文档
 ```
 
-## 🛠️ 环境要求
+##  环境要求
 
 请确保安装 Python 3.8+，并安装以下依赖：
 
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 *   `scikit-learn` (SVM)
 *   `numpy` (数据处理)
 
-## 📊 数据集准备
+##  数据集准备
 
 由于本项目设计为读取本地原始文件，请按照以下步骤准备数据：
 
@@ -53,7 +53,7 @@ pip install -r requirements.txt
     LOCAL_DATA_PATH = './data/fashion'  # 修改为你实际的绝对或相对路径
     ```
 
-## 🚀 运行方法
+##  运行方法
 
 配置好数据路径后，运行：
 
@@ -65,13 +65,13 @@ python main.py
 
 程序将依次运行 SVM 和 CNN。
 
-| 方法 | 核心/结构 | 准确率 (Accuracy) | 说明 |
-| :--- | :--- | :--- | :--- |
-| **SVM** | Linear Kernel | 82.30% | 线性核，速度较快 |
-| **SVM** | RBF Kernel | 85.90% | 高斯核，非线性能力更强 |
-| **CNN** | LeNet-5 Like | **86.50%** | 2层卷积+全连接，效果最佳 |
+| 方法 | 核心/结构 | Accuracy | 时间 | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| **SVM** | Linear Kernel | 84.24% | 184.76s | 线性核，速度较快 |
+| **SVM** | RBF Kernel | 87.90% | 230.88s | 高斯核，非线性能力更强 |
+| **CNN** | LeNet-5 Like | **89.16%** | 7m10s | 2层卷积+全连接，效果最佳 |
 
-*注：为了运行速度，SVM 部分默认仅使用了 5000 条训练数据。如需全量训练，请在 `main.py` 中移除 `limit` 参数。*
+*注：SVM 部分默认仅使用了全量训练数据。如需调整训练数据量，在 `main.py` 中 `limit` 参数。*
 
 ## 📝 实现细节
 

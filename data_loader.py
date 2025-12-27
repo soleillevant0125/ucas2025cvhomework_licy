@@ -78,7 +78,7 @@ def get_cnn_loaders(batch_size=64, data_root='./data/fashion'):
 
     return train_loader, test_loader
 
-def get_svm_data(data_root='./data/fashion', limit_train=5000, limit_test=1000):
+def get_svm_data(data_root='./data/fashion', limit_train=None, limit_test=None):
     """
     加载数据并返回 Flatten 后的 Numpy 数组
     """
@@ -91,7 +91,7 @@ def get_svm_data(data_root='./data/fashion', limit_train=5000, limit_test=1000):
     # 归一化 (SVM 对数值范围敏感)
     X_train_flat = X_train_flat.astype(np.float32) / 255.0
     X_test_flat = X_test_flat.astype(np.float32) / 255.0
-
+    
     # 采样
     if limit_train:
         X_train_flat = X_train_flat[:limit_train]
